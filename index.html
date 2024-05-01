@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Data - AR Bar Graphs</title>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden; background-color: white;">
+    <a-scene embedded arjs>
+        <!-- AR Marker -->
+        <a-marker preset="hiro">
+            <!-- Mountain Data (Bars) -->
+            <a-entity position="0 0.5 0">
+                <!-- X-axis and Y-axis -->
+                <a-cylinder height="0.02" radius="0.01" position="-1 0 0" color="black" rotation="0 0 0"></a-cylinder> <!-- X-axis -->
+                <a-cylinder height="0.02" radius="0.01" position="-1 0 0" color="black" rotation="0 0 90"></a-cylinder> <!-- Y-axis -->
+
+                <!-- Bars with New Data -->
+                <a-entity position="-0.5 0.5 0" scale="0.2 1 1">
+                    <!-- Bar 1: Mountain Lifespan (70 million years) -->
+                    <a-box height="1.2" depth="0.1" color="black" position="-1 0.6 0"></a-box>
+                    <a-text value="70M years" align="center" width="2" position="-1 1.2 0" color="black" scale="1 1 1"></a-text>
+
+                    <!-- Bar 2: Average Height (4000 meters) -->
+                    <a-box height="1.0" depth="0.1" color="gray" position="0 0.5 0"></a-box>
+                    <a-text value="4000 m" align="center" width="2" position="0 1.0 0" color="black" scale="2 2 2"></a-text>
+
+                    <!-- Bar 3: Age of Oldest Mountain (200 million years) -->
+                    <a-box height="1.5" depth="0.1" color="black" position="1 0.75 0"></a-box>
+                    <a-text value="200M years" align="center" width="2" position="1 1.5 0" color="black" scale="2 2 2"></a-text>
+
+                    <!-- Bar 4: Average Temperature (-10 degrees Celsius) -->
+                    <a-box height="0.6" depth="0.1" color="gray" position="2 0.3 0"></a-box>
+                    <a-text value="-10°C" align="center" width="2" position="2 0.6 0" color="black" scale="2 2 2"></a-text>
+
+                    <!-- Bar 5: Mountain Regions (10 total) -->
+                    <a-box height="0.8" depth="0.1" color="black" position="3 0.4 0"></a-box>
+                    <a-text value="10 regions" align="center" width="2" position="3 0.8 0" color="black" scale="2 2 2"></a-text>
+                </a-entity>
+            </a-entity>
+
+            <!-- Decorative Elements -->
+            <!-- Floor -->
+            <a-plane rotation="-90 0 0" width="20" height="20" color="white"></a-plane>
+            <!-- Ambient Light -->
+            <a-light type="ambient" color="#FFF"></a-light>
+        </a-marker>
+
+        <!-- Camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
